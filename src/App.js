@@ -8,23 +8,36 @@ import coverImage from './assets/images/oceanography-building.jpg';
 import './App.css';
 
 function App() {
-  
+  const [pages] = useState([
+    { name: 'Home', description: 'About' },
+    { name: 'Portfolio', description: 'Portfolio' },
+    { name: 'ContactForm', description: 'ContactForm' },
+    { name: 'Resume', description: 'Resume' },
+  ]);
+
+  const [currentPage, setcurrentPage] = useState(pages[0]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={coverImage} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Navbar
+        pages = {pages}
+        setcurrentPage = {setcurrentPage}
+        currentPage = {currentPage}
+      />
+      <main>
+        {currentPage.name === 'Home' ?
+            (<About></About>)
+            : currentPage.name === 'Portfolio' ?
+              (<Portfolio></Portfolio>)
+              : currentPage.name === 'Resume' ?
+                (<Resume></Resume>)
+                : currentPage.name === 'ContactForm' ?
+                  (<Contact />)
+                  : (<></>)
+        }
+      </main>
+      <Footer />
     </div>
   );
 }
