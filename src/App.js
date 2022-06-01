@@ -4,6 +4,8 @@ import About from './components/About';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
+import Resume from './components/Resume';
+import Projects from './components/Projects';
 import coverImage from './assets/images/oceanography-building.jpg';
 import './App.css';
 
@@ -28,11 +30,11 @@ function App() {
       <main>
         {currentPage.name === 'Home' ?
             (<About></About>)
-            : currentPage.name === 'Portfolio' ?
-              (<Portfolio></Portfolio>)
+            : currentPage.name === 'Projects' ?
+              (<Projects></Projects>)
               : currentPage.name === 'Resume' ?
                 (<Resume></Resume>)
-                : currentPage.name === 'ContactForm' ?
+                : currentPage.name === 'Contact' ?
                   (<Contact />)
                   : (<></>)
         }
