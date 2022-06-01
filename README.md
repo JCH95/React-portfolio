@@ -1,3 +1,13 @@
+# Joshua's React Portfolio
+This app is a portfolio built by Josh using React. Unfortunately this project is et to be complete, so please return at a later date for the finished product!
+I ran out of time with class to fully finish/polish this project.
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
